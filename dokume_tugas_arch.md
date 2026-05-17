@@ -126,4 +126,6 @@ setelah reboot lepas usb
 
 # SETELAH REBOOT TEKAN F12
 ### PILIH TULISAN GRUP
+<img width="717" height="1600" alt="image" src="https://github.com/user-attachments/assets/b3d61f08-26c5-4b47-b6f6-bc793da3125f" />
+
 ### LALU MASUK KE ARCHLINUX
