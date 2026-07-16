@@ -76,7 +76,9 @@ itu sudah dilakukan pada mounting boot nya
 pattern
 1. systemctl stop [service]
 2. systemctl mask [service name]
+
 Contoh :
+
 1. systemctl stop autofs.service
 2. systemctl mask autofs.service
 
