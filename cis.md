@@ -44,6 +44,11 @@ list mount page:
 6. /var/log
 7. /var/log/audit
 
+Contoh :
+1. /dev/sda1/home nodev,nosuid
+2. /dev/sda1/var nodev,nosuid
+3. /dev/sda1/var/tmp nodev,nosuid,noexec
+
 **Note**: 
 yang gak ada noexec nya /home dan /var
 ### package management
@@ -92,6 +97,20 @@ Contoh :
 | 6   | kea-dhcp-ddns.service |
 | 7   | kea-dhcp4.service     |
 | 8   | kea-dhcp6.service     |
+| 9   | named.service         |
+| 10  | dnsmasq.service       | 
+| 11  | vsftpd.service        | 
+| 12  | dovecot.socket        | 
+| 13  | dovecot.service       | 
+| 14  | cyrus-imapd.service   |
+| 15  | nfs-server.service    |
+| 16  | cups.socket           |
+| 17  | cups.service          |
+| 18  | rpcbind.socket        |
+| 19  | rpcbind.service       |
+| 20  | rsyncd.socket         |
+| 21  | rsyncd.service        |
+| 22  | smb.service           |
 
 #### configure client services 
 pattern nya
