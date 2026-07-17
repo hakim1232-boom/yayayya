@@ -76,6 +76,8 @@ itu sudah dilakukan pada mounting boot nya
 | systemd-coredump ProcessSizeMax | /etc/systemd/coredump.conf.d/coredump ProcessSizeMax.conf | ProcessSizeMax=0 |
 | systemd-coredump Storage | /etc/systemd/coredump.conf.d/coredump Storage.conf | Storage=none | 
 
+kptr N = 1 or 2
+yama N = 1 or 2 or 3
 ## services
 ##### convigure server service
 pattern
