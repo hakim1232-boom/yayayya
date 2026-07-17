@@ -255,8 +255,8 @@ hak akses
 
 | access    | alphabet | numeric |
 | --------- | -------- | ------- |
-| write     | w        | 4       |
-| read      | r        | 2       |
+| write     | w        | 2       |
+| read      | r        | 4       |
 | execution | x        | 1       |
 
 contoh:
