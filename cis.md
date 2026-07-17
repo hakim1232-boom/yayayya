@@ -340,9 +340,66 @@ isi dengan
 auth required pam_wheel.so use_uid group=sugroup
 ```
 
+/etc/ssh/sshd_config
+path atau letak file yang ditargetkan 
+
+
+- **AllowUsers** = hanya nama pengguna (user) yang didaftarkan di sini yang diizinkan untuk masuk ke server.
+- **AllowGroups** = digunakan untuk mempermudah administrator jika ada banyak orang untuk dizinkan.
+- **DenyUsers** = nama pengguna yang ada di daftar ini akan **dilarang keras** untuk masuk ke dalam server, tanpa terkecuali.
+- **DenyGroups** = digunakan untuk memblokir seluruh anggota dari suatu kelompok/grup secara bersamaan.
+
+#### sudo is installed
+pattern 
+```
+pacman -S sudo
+```
+
+#### sudo timestamp_timeout
+pattern
+```
+nvim /etc/sudoers
+```
+isi dengan 
+```
+Defaults    env_reset,timestamp_timeout=15
+```
+
+```
+nvim /etc/sudoers
+```
+dan
+```
+nvim /etc/sudoers.d
+```
+
+isi dengan:
+```
+Defaults use_pty
+Defaults logfile="/var/log/sudo.log"
+Defaults    env_reset,timestamp_timeout=15
+```
+
+#### users must provide password 
+```
+nvim /etc/sudoers
+```
+
+```
+nvim /etc/sudoers.d
+```
+
+kedua file tersebut hapus line yang "NOPASSWD"
+
+#### ensure access to the su  command
+```
+nvim /etc/pam.d/su
+```
+isi dengan 
+```
+auth required pam_wheel.so use_uid group=sugroup
+```
+
 #### user accounts and environment
 
 - untuk mengubah shadow password masuk ke path /etc/login.defs
-
-## logging and auditing
-## system maintenance
