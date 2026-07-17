@@ -70,8 +70,8 @@ itu sudah dilakukan pada mounting boot nya
 | fs.protected_symlinks  | /etc/sysctl.d/fs-symlink.conf         | s.protected_symlinks = 1   |
 | fs.suid_dumpable       | /etc/sysctl.d/fs-dumpable.conf        | fs.suid_dumpable = 0       |
 | kernel.dmesg_restrict  | /etc/sysctl.d/dmesg_restrict.conf     | kernel.dmesg_restrict = 1  |
-| kernel.kptr_restrict   | /etc/sysctl.d/kptr_restrict.conf      | kernel.kptr_restrict = 2   |
-| kernel.yama.ptrace_scope | /etc/sysctl.d/yama.ptrace_scop.conf | kernel.yama.ptrace_scope = 1 |
+| kernel.kptr_restrict   | /etc/sysctl.d/kptr_restrict.conf      | kernel.kptr_restrict = {N}   |
+| kernel.yama.ptrace_scope | /etc/sysctl.d/yama.ptrace_scop.conf | kernel.yama.ptrace_scope = {N} |
 | kernel.randomize_va_space | /etc/sysctl.d/randomize_va_space.conf | kernel.randomize_va_space = 2|
 | systemd-coredump ProcessSizeMax | /etc/systemd/coredump.conf.d/coredump ProcessSizeMax.conf | ProcessSizeMax=0 |
 | systemd-coredump Storage | /etc/systemd/coredump.conf.d/coredump Storage.conf | Storage=none | 
