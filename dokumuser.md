@@ -40,4 +40,90 @@ Sebelum instalasi dilakukan, disk perlu dibagi menjadi beberapa partisi mengguna
 #### Skema dan Rekomendasi Partisi (Contoh Disk 20 GB):
 
 | Partisi | Device | Fungsi Utama | Tipe Partisi (*Type*) | Ukuran |
-| :--- | :--- |
+| :--- | :--- | :--- | :--- | :--- |
+| **EFI** | `/dev/vda1` | Menyimpan file bootloader sistem | `EFI System` | 1 GB |
+| **Root** | `/dev/vda2` | Menyimpan sistem operasi, konfigurasi, dan aplikasi | `Linux filesystem` | 15 GB |
+| **[Nama partisi 3]** | `/dev/vda3` | [jelaskan fungsi, misal: `/home` atau `/var`] | `Linux filesystem` | 3 GB |
+| **Swap** | `/dev/vda4` | Memori tambahan/cadangan ketika RAM utama penuh | `Linux swap` | ~1 GB |
+
+#### Visualisasi Struktur Partisi Disk 20GB:
+```text
+Disk 20GB (/dev/vda)
+├── EFI                1 GB
+├── Root               15 GB
+├── [Partisi Ketiga]    3 GB
+└── Swap               ~1 GB
+```
+
+#### 2.1 Melihat Disk yang Tersedia
+```bash
+lsblk
+```
+> **Peringatan Penting:** Pastikan Anda memilih nama disk yang benar (contoh: `/dev/vda`). Kesalahan memilih disk dapat menyebabkan data pada drive lain terhapus.
+
+#### 2.2 Membuat Partisi Menggunakan `cfdisk`
+Buka alat pembuat partisi dengan perintah:
+```bash
+cfdisk /dev/vda
+```
+
+Jika disk belum memiliki partition table, akan muncul pilihan **Select label type**. Pilih **`gpt`**.
+
+Lakukan pembuatan 4 partisi sesuai tabel di atas:
+
+1. Pilih ruang kosong (**Free space**) → **[New]** → masukkan ukuran partisi.
+2. Setelah partisi dibuat, pilih **[Type]** untuk mengatur tipe partisi sesuai kolom *Tipe Partisi* di tabel (contoh: `EFI System` untuk partisi pertama).
+3. Ulangi untuk semua partisi yang direncanakan.
+
+#### 2.3 Menyimpan dan Keluar dari `cfdisk`
+1. Pilih menu **[Write]** di bagian bawah layar `cfdisk`.
+2. Ketik `yes` lalu tekan `Enter` untuk mengonfirmasi perubahan partisi pada disk.
+3. Pilih menu **[Quit]** untuk keluar dari utilitas `cfdisk`.
+
+---
+
+### Langkah 3: Menginstal Package Git
+
+Package `git` dibutuhkan untuk mengunduh berkas installer [Nama OS] pada langkah berikutnya:
+```bash
+pacman -Sy git
+```
+
+---
+
+### Langkah 4: Mengunduh Installer
+
+Clone repository installer:
+```bash
+git clone https://codeberg.org/shelver/installer.git
+```
+
+> **Catatan Keamanan:** Jangan menyisipkan token akses langsung di URL clone (format `https://user:TOKEN@codeberg.org/...`). Token tersebut akan tersimpan di riwayat shell dan bisa bocor jika perangkat/dokumen dibagikan ke pihak lain. Gunakan credential helper, prompt interaktif, atau SSH key sebagai gantinya.
+
+Masuk ke direktori script:
+```bash
+cd installer
+cd script
+```
+
+Berikan izin eksekusi pada script:
+```bash
+chmod +x install.sh
+```
+
+---
+
+### Langkah 5: Menjalankan Instalasi
+
+Jalankan skrip otomatis instalasi:
+```bash
+./install.sh
+```
+
+Skrip installer akan menjalankan tahapan berikut:
+1. **[Tahapan 1]** — [jelaskan, misal: instalasi sistem dasar]
+2. **[Tahapan 2]** — [jelaskan, misal: konfigurasi timezone & hostname]
+3. **[Tahapan 3]** — [jelaskan, misal: instalasi bootloader ke partisi EFI]
+4. **[Tahapan 4]** — [jelaskan, misal: pembuatan user & password]
+
+Setelah proses instalasi selesai, lepas media installer dan lakukan **restart** pada komputer Anda. Sistem operasi [Nama OS] siap digunakan.
