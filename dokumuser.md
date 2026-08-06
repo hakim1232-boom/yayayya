@@ -1,6 +1,6 @@
-# Dokumentasi Instalasi Sistem Operasi [Nama OS]
+# Dokumentasi Instalasi Sistem Operasi Shelveros
 
-Dokumen ini menjelaskan langkah-langkah instalasi sistem operasi [Nama OS] secara mendalam dan terstruktur. Panduan ini dirancang khusus agar mudah dipahami dan diikuti oleh pengguna yang baru pertama kali melakukan instalasi [Nama OS].
+Dokumen ini menjelaskan langkah-langkah instalasi sistem operasi Shelver-os secara mendalam dan terstruktur. Panduan ini dirancang khusus agar mudah dipahami dan diikuti oleh pengguna yang baru pertama kali melakukan instalasi [Nama OS].
 
 > **Peringatan Keselamatan Data:**  
 > Proses instalasi ini melibatkan pembagian dan pemformatan partisi yang dapat menghapus seluruh data pada media penyimpanan. Pastikan seluruh data penting telah dicadangkan (backup) ke media eksternal atau layanan penyimpanan awan sebelum melanjutkan.
